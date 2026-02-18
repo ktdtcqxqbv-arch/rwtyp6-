@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VN7 | أبوعتب للتقنية</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg1:#0f0c29;
+    --bg2:#1a1a2e;
+    --bg3:#000000;
+    --neon-purple:#a020f0;
+    --neon-blue:#00e5ff;
+}
+
+body{
+    margin:0;
+    font-family:'Cairo',sans-serif;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+    color:white;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(160,32,240,0.3);
+    z-index:1000;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:3px;
+    background:linear-gradient(90deg,var(--neon-purple),var(--neon-blue));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 0 15px var(--neon-purple);
+}
+
+.menu-btn{
+    font-size:28px;
+    cursor:pointer;
+    color:var(--neon-purple);
+}
+
+/* SIDEBAR */
+.sidebar{
+    position:fixed;
+    top:0;
+    right:-270px;
+    width:270px;
+    height:100%;
+    background:rgba(10,10,20,0.95);
+    backdrop-filter:blur(20px);
+    box-shadow:-5px 0 30px rgba(160,32,240,0.4);
+    transition:0.4s ease;
+    padding-top:80px;
+    z-index:999;
+}
+
+.sidebar a{
+    display:block;
+    padding:18px 25px;
+    text-decoration:none;
+    color:white;
+    border-bottom:1px solid #1f1f30;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    background:linear-gradient(90deg,var(--neon-purple),transparent);
+    padding-right:35px;
+}
+
+/* CONTENT */
+.container{
+    padding-top:120px;
+    max-width:800px;
+    margin:auto;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.card{
+    background:rgba(20,20,40,0.8);
+    border-radius:25px;
+    padding:30px;
+    margin-bottom:30px;
+    box-shadow:0 0 40px rgba(160,32,240,0.25);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 60px rgba(0,229,255,0.4);
+}
+
+.card h2{
+    margin-top:0;
+    color:var(--neon-blue);
+}
+
+.btn{
+    display:block;
+    text-align:center;
+    padding:15px;
+    margin-top:15px;
+    border-radius:15px;
+    text-decoration:none;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(90deg,var(--neon-purple),var(--neon-blue));
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px var(--neon-blue);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px 20px;
+    margin-top:60px;
+    background:rgba(0,0,0,0.7);
+    font-size:14px;
+    color:#aaa;
+}
+
+.owner{
+    color:var(--neon-blue);
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">VN7</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</header>
+
+<div class="sidebar" id="sidebar">
+    <a href="#">الرئيسية</a>
+    <a href="#">مشاريعي التقنية</a>
+    <a href="#">أدوات المطورين</a>
+    <a href="#">تواصل معنا</a>
+</div>
+
+<div class="container">
+
+<div class="card">
+    <h2>مرحباً بك في VN7</h2>
+    <p>منصة تقنية احترافية تقدم محتوى وأدوات برمجية وتصاميم عصرية بأسلوب حديث وفخم.</p>
+    <a href="#" class="btn">استكشف الآن</a>
+</div>
+
+<div class="card">
+    <h2>قسم التطبيقات التقنية</h2>
+    <p>هنا يتم عرض التطبيقات والمشاريع التقنية الخاصة بنا بشكل احترافي وآمن.</p>
+    <a href="#" class="btn">عرض التفاصيل</a>
+</div>
+
+</div>
+
+<footer>
+VN7<br>
+من صنع <span class="owner">أبوعتب للتقنية</span><br>
+© 2026 جميع الحقوق محفوظة
+</footer>
+
+<script>
+function toggleMenu(){
+    let menu=document.getElementById("sidebar");
+    if(menu.style.right==="0px"){
+        menu.style.right="-270px";
+    }else{
+        menu.style.right="0px";
+    }
+}
+</script>
+
+</body>
+</html>
